@@ -1,0 +1,16 @@
+{
+  "name": "ivend-excel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^2.0.1",
+    "lru-cache": "^5.1.1",
+    "xlsx": "^0.14.1"
+  }
+}

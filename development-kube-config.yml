@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: excel
+  namespace: development
+  labels:
+    app: excel
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: excel
+  template:
+    metadata:
+      namespace: development
+      labels:
+        app: excel
+    spec:
+      containers:
+      - name: excel
+        image: registry.gitlab.com/pshenmic/ivend/excel:develop
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5000
+      imagePullSecrets:
+      - name: gitlabregistrycred
