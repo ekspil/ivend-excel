@@ -18,14 +18,9 @@ class ExcelService {
 
         /* create a new blank workbook */
         const wb = XLSX.utils.book_new();
-        const new_ws_name = "SheetJS"
+        const new_ws_name = "Report"
 
-        const ws_data = [
-            ["S", "h", "e", "e", "t", "J", "S"],
-            [1, 2, 3, 4, 5]
-        ]
-
-        const ws = XLSX.utils.aoa_to_sheet(ws_data)
+        const ws = XLSX.utils.aoa_to_sheet(rawData)
 
         XLSX.utils.book_append_sheet(wb, ws, new_ws_name)
 
