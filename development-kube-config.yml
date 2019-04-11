@@ -35,8 +35,5 @@ spec:
           periodSeconds: 5
           successThreshold: 1
           failureThreshold: 3
-        envFrom:
-          - configMapRef:
-              name: excel-config
       imagePullSecrets:
       - name: gitlabregistrycred
