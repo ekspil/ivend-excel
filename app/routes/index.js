@@ -85,7 +85,7 @@ function Routes({fastify, excelService}) {
 
     fastify.post("/api/v1/excel/generate", generateExcel)
     fastify.get("/api/v1/excel/:id", getFile)
-    fastify.get("/api/v1/status", getFile)
+    fastify.get("/api/v1/status", status)
 
 }
 
