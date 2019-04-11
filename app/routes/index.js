@@ -78,8 +78,14 @@ function Routes({fastify, excelService}) {
     }
 
 
+    const status = async (request, reply) => {
+        reply.type("application/json").code(200)
+        return {health: "OK"}
+    }
+
     fastify.post("/api/v1/excel/generate", generateExcel)
     fastify.get("/api/v1/excel/:id", getFile)
+    fastify.get("/api/v1/status", getFile)
 
 }
 
