@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: excel
-  namespace: development
+  namespace: production
   labels:
     app: excel
 spec:
@@ -17,13 +17,13 @@ spec:
       app: excel
   template:
     metadata:
-      namespace: development
+      namespace: production
       labels:
         app: excel
     spec:
       containers:
       - name: excel
-        image: registry.gitlab.com/pshenmic/ivend/excel:$CIRCLE_SHA1
+        image: registry.gitlab.com/pshenmic/ivend/excel:1.0.0
         imagePullPolicy: Always
         ports:
           - containerPort: 5000
