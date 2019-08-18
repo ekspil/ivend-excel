@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ."
   },
   "author": "",
   "license": "ISC",
@@ -13,5 +14,8 @@
     "lru-cache": "^5.1.1",
     "my-custom-logger": "^1.0.0",
     "xlsx": "^0.14.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.1.0"
   }
 }

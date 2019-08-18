@@ -1,4 +1,6 @@
 const ExcelService = require("./app/service/ExcelService")
+const logger = require("my-custom-logger")
+
 const fastify = require("fastify")({
     logger: true
 })

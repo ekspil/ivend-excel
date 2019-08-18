@@ -1,6 +1,6 @@
 const ValidationUtils = require("../util/validation.util")
-const fs = require('fs')
-const crypto = require('crypto');
+const fs = require("fs")
+const crypto = require("crypto")
 const LRU = require("lru-cache")
 const logger = require("my-custom-logger")
 
@@ -12,7 +12,7 @@ const randomBytes = async (length) => {
             } else {
                 resolve(buf)
             }
-        });
+        })
     })
 }
 
@@ -59,7 +59,6 @@ function Routes({fastify, excelService}) {
 
     const getFile = async (request, reply) => {
         const {id} = request.params
-        const {filename} = request.headers
 
         const wb = cache.get(id)
 
@@ -73,8 +72,9 @@ function Routes({fastify, excelService}) {
 
         const fileBuf = await readFile(fileName)
 
+
         reply.code(200)
-            .type('application/octet-stream')
+            .type("application/octet-stream")
             .header(`Content-Disposition`, `attachment; filename="filename.xlsx"`)
             .send(fileBuf)
 
