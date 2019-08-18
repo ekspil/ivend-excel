@@ -2,6 +2,7 @@ const ValidationUtils = require("../util/validation.util")
 const fs = require('fs')
 const crypto = require('crypto');
 const LRU = require("lru-cache")
+const logger = require("my-custom-logger")
 
 const randomBytes = async (length) => {
     return new Promise((resolve, reject) => {
@@ -26,7 +27,7 @@ const cache = new LRU(options)
 function Routes({fastify, excelService}) {
 
     const generateExcel = async (request, reply) => {
-        console.log(request.body)
+        logger.debug("Request for generating report: " + request.body)
 
         if (!ValidationUtils.validateGenerateExcelRequest(request.body)) {
             return reply.code(400).send(undefined)
@@ -38,8 +39,9 @@ function Routes({fastify, excelService}) {
         const id = idBuf.toString("hex")
         cache.set(id, wb)
 
+        reply.type("application/json").code(200).send({id})
 
-        return reply.type("application/json").code(200).send({id})
+        return logger.info("Successfully generated report #" + id)
     }
 
     const readFile = (path) => {
@@ -71,10 +73,12 @@ function Routes({fastify, excelService}) {
 
         const fileBuf = await readFile(fileName)
 
-        return reply.code(200)
+        reply.code(200)
             .type('application/octet-stream')
             .header(`Content-Disposition`, `attachment; filename="filename.xlsx"`)
             .send(fileBuf)
+
+        return logger.info("Request for download report #" + id + " successfully processed")
     }
 
 
