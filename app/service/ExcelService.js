@@ -17,7 +17,7 @@ class ExcelService {
         //todo to stream
 
         /* create a new blank workbook */
-        const wb = XLSX.utils.book_new();
+        const wb = XLSX.utils.book_new()
         const new_ws_name = "Report"
 
         const ws = XLSX.utils.aoa_to_sheet(rawData)

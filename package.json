@@ -4,13 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ."
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^8.1.0",
     "fastify": "^2.0.1",
     "lru-cache": "^5.1.1",
+    "my-custom-logger": "^1.0.2",
     "xlsx": "^0.14.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.1.0"
   }
 }
