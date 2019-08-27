@@ -1,3 +1,4 @@
+require("dotenv").config()
 const ExcelService = require("./app/service/ExcelService")
 const logger = require("my-custom-logger")
 
