@@ -47,14 +47,10 @@ function Routes({fastify, excelService, pdfService}) {
     const generatePdf = async (request, reply) => {
         logger.info("Request for generating report: " + request.body)
         const idBuf = await randomBytes(16)
-        logger.info("01")
         const id = idBuf.toString("hex")
-        logger.info("02")
         const wb = await pdfService.generateFromRawData(request.body, id)
-        logger.info("03")
 
         cache.set(id, wb)
-        logger.info("04")
         reply.type("application/json").code(200).send({id})
 
 
