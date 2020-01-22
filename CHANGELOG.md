@@ -8,4 +8,4 @@
 
 # 1.0.2 - Release
 
-* Added pdf generation
+* Added pdf generation 
