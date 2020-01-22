@@ -1,6 +1,6 @@
 {
   "name": "ivend-excel",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -14,6 +14,7 @@
     "fastify": "^2.0.1",
     "lru-cache": "^5.1.1",
     "my-custom-logger": "^1.0.2",
+    "puppeteer": "^2.0.0",
     "xlsx": "^0.14.1"
   },
   "devDependencies": {
