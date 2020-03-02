@@ -9,3 +9,7 @@
 # 1.0.2 - Release
 
 * Added pdf generation 
+
+# 1.0.3 - Release
+
+* Fix
