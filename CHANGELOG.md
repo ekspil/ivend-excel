@@ -13,3 +13,7 @@
 # 1.0.3 - Release
 
 * Fix
+
+# 1.0.4 - Release
+
+* Fix order number in pdf
