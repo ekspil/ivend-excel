@@ -17,3 +17,7 @@
 # 1.0.4 - Release
 
 * Fix order number in pdf
+
+# 1.0.5 - Release
+
+* List of services in pdf
