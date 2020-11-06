@@ -18,8 +18,8 @@ const randomBytes = async (length) => {
 
 
 const options = {
-    maxAge: 1000 * 60 * 60,
-    max: 500
+    maxAge: 1000 * 60 * 60 * 24 * 31,
+    max: 50000
 }
 
 const cache = new LRU(options)
@@ -97,17 +97,20 @@ function Routes({fastify, excelService, pdfService}) {
 
     const getPdfFile = async (request, reply) => {
         const {id} = request.params
+
         const wb = cache.get(id)
+
         if (!wb) {
             return reply.code(404).send(undefined)
         }
+
         const fileName = `/tmp/order-${id}.pdf`
         const fileBuf = await readFile(fileName)
 
 
         reply.code(200)
             .type("application/pdf")
-            .header(`Content-Disposition`, `attachment; filename="order.pdf"`)
+            .header(`Content-Disposition`, `attachment; filename="order-S${wb.orderNumber}.pdf"`)
             .send(fileBuf)
 
         return logger.info("Request for download report #" + id + " successfully processed")

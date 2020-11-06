@@ -18,7 +18,7 @@ class PdfService {
         const browser = await puppeteer.launch({args: ["--no-sandbox", "--disable-setuid-sandbox"], ignoreHTTPSErrors: true})
         const page = await browser.newPage()
         await page.goto(`${process.env.FRONTEND_URL}/assets/uploads/order.html?summa=${data.amount}.00&inn=${data.inn}&companyName=${data.companyName}&orderNumber=${data.orderNumber}&services=${data.services}`, {waitUntil: "networkidle2"})
-        const file = await page.pdf({
+        await page.pdf({
             path: "/tmp/order-"+id+".pdf",
             format: "letter",
             margin: {
@@ -29,7 +29,7 @@ class PdfService {
             }
         })
         await browser.close()
-        return file
+        return data
 
     }
 

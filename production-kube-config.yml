@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: excel
-        image: registry.gitlab.com/pshenmic/ivend/excel:1.0.5
+        image: registry.gitlab.com/pshenmic/ivend/excel:1.0.6
         imagePullPolicy: Always
         ports:
           - containerPort: 5000
