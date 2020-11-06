@@ -21,3 +21,7 @@
 # 1.0.5 - Release
 
 * List of services in pdf
+
+# 1.0.6 - Release
+
+* Order number in file name
