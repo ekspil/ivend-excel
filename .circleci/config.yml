@@ -24,7 +24,6 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}-{{ checksum "package-lock.json" }}
 
-
   docker_push_tagged:
     docker:
       - image: docker:19.03.13-git
@@ -59,9 +58,7 @@ jobs:
   deploy_develop:
     docker:
       - image: circleci/node:11.1.0
-
     working_directory: ~/repo
-
     steps:
       - run:
           name: Deploy
@@ -80,9 +77,7 @@ jobs:
   deploy_production:
     docker:
       - image: circleci/node:11.1.0
-
     working_directory: ~/repo
-
     steps:
       - run:
           name: Deploy
