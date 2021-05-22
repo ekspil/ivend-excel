@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: excel
-        image: registry.gitlab.com/pshenmic/ivend/excel:$CIRCLE_SHA1
+        image: cr.yandex/crpfb8t478v3of681kce/excel:$CIRCLE_SHA1
         imagePullPolicy: Always
         ports:
           - containerPort: 5000
