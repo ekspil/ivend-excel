@@ -25,3 +25,7 @@
 # 1.0.6 - Release
 
 * Order number in file name
+
+# 1.0.7 - Release
+
+* Move to yandex
