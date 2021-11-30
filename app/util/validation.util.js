@@ -13,8 +13,9 @@ function validateGenerateExcelRequest(body) {
             return false
         }
 
-        return row.every((cell) => {
-            return typeof cell === "string"
+        return row.every(() => {
+            //return typeof cell === "string"
+            return true
         })
     })
 }

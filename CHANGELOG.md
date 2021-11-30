@@ -29,3 +29,7 @@
 # 1.0.7 - Release
 
 * Move to yandex
+
+# 1.0.8 - Release
+
+* disable string check
