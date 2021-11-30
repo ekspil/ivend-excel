@@ -33,3 +33,7 @@
 # 1.0.8 - Release
 
 * disable string check
+
+# 1.0.9 - Release
+
+* disable string check
