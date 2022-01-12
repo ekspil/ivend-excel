@@ -110,7 +110,7 @@ function Routes({fastify, excelService, pdfService}) {
 
         reply.code(200)
             .type("application/pdf")
-            .header(`Content-Disposition`, `attachment; filename="order-S${wb.orderNumber}.pdf"`)
+            .header(`Content-Disposition`, `attachment; filename="order-VFT${wb.orderNumber}.pdf"`)
             .send(fileBuf)
 
         return logger.info("Request for download report #" + id + " successfully processed")
