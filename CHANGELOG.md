@@ -41,3 +41,7 @@
 # 1.0.10 - Release
 
 * order number change
+
+# 1.0.11 - Release
+
+* fix generate pdf
