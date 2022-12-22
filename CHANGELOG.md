@@ -45,3 +45,7 @@
 # 1.0.11 - Release
 
 * fix generate pdf
+
+# 1.0.12 - Release
+
+* add swift bill
