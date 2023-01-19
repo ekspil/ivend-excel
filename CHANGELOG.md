@@ -49,3 +49,7 @@
 # 1.0.12 - Release
 
 * add swift bill
+
+# 1.0.13 - Release
+
+* add partner act

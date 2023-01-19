@@ -84,6 +84,20 @@ function Routes({fastify, excelService, pdfService}) {
 
     }
 
+    const generatePartnerAct = async (request, reply) => {
+        logger.info("Request for generating act: " + request.body)
+        const idBuf = await randomBytes(16)
+        const id = idBuf.toString("hex")
+        const wb = await pdfService.generatePartnerActFromRawData(request.body, id)
+
+        cache.set(id, wb)
+        reply.type("application/json").code(200).send({id})
+
+
+        return logger.info("Successfully generated partner act #" + id)
+
+    }
+
     const readFile = (path) => {
         return new Promise((resolve, reject) => {
             fs.readFile(path, (err, buffer) => {
@@ -174,6 +188,7 @@ function Routes({fastify, excelService, pdfService}) {
     fastify.post("/api/v1/pdf/generate", generatePdf)
     fastify.post("/api/v1/pdf/generateSwift", generateSwiftPdf)
     fastify.post("/api/v1/pdf/generateAct", generateAct)
+    fastify.post("/api/v1/pdf/generatePartnerAct", generatePartnerAct)
     fastify.get("/api/v1/pdf/:id", getPdfFile)
     fastify.get("/api/v1/pdf/act/:id", getActFile)
     fastify.get("/api/v1/status", status)
