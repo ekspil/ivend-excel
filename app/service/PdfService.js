@@ -92,7 +92,7 @@ class PdfService {
         //todo to stream
         const browser = await puppeteer.launch({args: ["--no-sandbox", "--disable-setuid-sandbox"], ignoreHTTPSErrors: true})
         const page = await browser.newPage()
-        const url = `${process.env.FRONTEND_URL}/assets/uploads/partnerAct.html?amount=${data.amount}.00&inn=${data.inn}&companyName=${data.companyName}&id=${data.id}&services=${data.services}&from=${data.from}&to=${data.to}&userId=${data.userId}`
+        const url = `${process.env.FRONTEND_URL}/assets/uploads/partnerAct.html?amount=${Number(data.amount).toFixed(2)}&inn=${data.inn}&companyName=${data.companyName}&id=${data.id}&services=${data.services}&from=${data.from}&to=${data.to}&userId=${data.userId}`
         await page.goto(url, {waitUntil: "networkidle2"})
         await page.pdf({
             path: "/tmp/act-"+id+".pdf",

@@ -53,3 +53,7 @@
 # 1.0.13 - Release
 
 * add partner act
+
+# 1.0.14 - Hotfix
+
+* fix
