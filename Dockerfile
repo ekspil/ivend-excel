@@ -1,4 +1,4 @@
-FROM node:12
+FROM node:11
 RUN mkdir -p /app/app
 COPY app /app/app
 COPY app.js /app
