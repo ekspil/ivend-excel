@@ -61,3 +61,7 @@
 # 1.0.15 - Hotfix
 
 * added acts
+
+# 1.0.17 - Hotfix
+
+* hotfix act name
