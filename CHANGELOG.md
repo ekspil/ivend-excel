@@ -57,3 +57,7 @@
 # 1.0.14 - Hotfix
 
 * fix
+
+# 1.0.15 - Hotfix
+
+* added acts
